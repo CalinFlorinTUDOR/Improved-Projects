@@ -43,11 +43,42 @@ let flights = [
   },
 ]
 
-
-const destinations = ["TOKYO", "FRANKFURT", "DUBAI", "LONDON", "OMAN", "BEIRUT"]
-const remarks = ["ON TIME", "DELAYED", "CANCELLED"]
+// Add more destinations and status
+const destinations = ["TOKYO", "FRANKFURT", "DUBAI", "LONDON", "OMAN", "BEIRUT" , "SIBIU" , "BUCHAREST"]
+const remarks = ["ON TIME", "DELAYED", "CANCELLED" , "LANDING" , "CHECK-IN" , "BOARDING" , "TAKE-OFF"]
 
 let hour = 15
+
+// Add digital clock code 
+
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
+
+const digitalClock = setInterval(function digital() {
+
+  let dateToday = new Date();
+  let hr = dateToday.getHours();
+  let min = dateToday.getMinutes();
+  let sec = dateToday.getSeconds();
+
+  if(hr < 10) {
+    hr = '0' + hr;
+  }
+
+  if(min < 10) {
+    min = '0' + min;
+  }
+
+  if(sec < 10) {
+    sec = '0' + sec;
+  }
+  
+
+  hours.textContent = hr;
+  minutes.textContent = min;
+  seconds.textContent = sec;
+}, 1000);
 
 function populateTable() {
   for (const flight of flights) {

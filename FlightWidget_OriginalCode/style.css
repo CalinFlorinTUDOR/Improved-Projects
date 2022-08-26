@@ -11,7 +11,10 @@ body {
     justify-content: center;
     height: 100vh;
     align-items: center;
-    background-color: rgb(251,199,127);
+    /* background-color: rgb(251,199,127); Change the background-color,add radial-gradient and overflow hidden */
+    background: rgb(37,43,75);
+    background: radial-gradient(circle, rgba(37,43,75,1) 0%, rgba(70,135,252,1) 100%);
+    overflow: hidden;
 }
 
 header {
@@ -39,6 +42,18 @@ header {
   background-color: rgb(0,0,0);
   float: left;
   height: 40px;
+}
+
+/* Add new class in CSS */
+
+.digital-clock {
+
+  display: flex;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 35px;
+  position: absolute;
+  top: 290px;
+  padding-left: 920px;
 }
 
 #time {
