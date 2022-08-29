@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flight Widget</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Add two clocks in div departures - digital&analog - and flip one into another -->
-  <div class="departures">
-    <header>DEPARTURES
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Widget</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Add two clocks in div departures - digital&analog - and flip one into another -->
+    <div class="departures">
+      <header>
+        DEPARTURES
         <!-- <div class="digital-clock">
           <div id="hours">00</div>
           <span>:</span>
           <div id="minutes">00</div>
           <span>:</span>
           <div id="seconds">00</div>
-          
+
         </div> -->
 
         <div class="analog-clock">
-
+          <p>test</p>
           <div id="seconds-hand"></div>
           <div id="minutes-hand"></div>
           <div id="hours-hand"></div>
           <div id="centre"></div>
-          
         </div>
       </header>
-    <table>
-      
-      <thead>
-      <tr>  
+      <table>
+        <thead>
+          <tr>
+            <!-- rename the remarks and add whitespaces between letters -->
+            <th id="time">T I M E</th>
+            <th id="destination">D E S T I N A T I O N</th>
+            <th id="flight">F L I G H T</th>
+            <th id="gate">G A T E</th>
+            <th id="remarks">S T A T U S</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
 
-        <!-- rename the remarks and add whitespaces between letters -->
-          <th id="time">T I M E</th>
-          <th id="destination">D E S T I N A T I O N</th>
-          <th id="flight">F L I G H T</th>
-          <th id="gate">G A T E</th>
-          <th id="remarks">S T A T U S</th> 
-      </tr>
-      </thead>
-      <tbody id="table-body"></tbody>
-    </table>
-
-
-  </div>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
