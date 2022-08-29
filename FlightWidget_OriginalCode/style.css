@@ -1,17 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap");
 
 * {
-    font-family: 'Ubuntu Condensed', sans-serif;
-    color: rgb(240,240,240);
-    font-size: 35px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  color: rgb(240, 240, 240);
+  font-size: 35px;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-    background-color: rgb(251,199,127);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  /* background-color: rgb(251,199,127); Change the background-color,add radial-gradient and overflow hidden */
+  background: rgb(37, 43, 75);
+  background: radial-gradient(
+    circle,
+    rgba(37, 43, 75, 1) 0%,
+    rgba(70, 135, 252, 1) 100%
+  );
+  overflow: hidden;
 }
 
 header {
@@ -19,13 +26,13 @@ header {
 }
 
 .departures {
-  background-color: rgb(6,6,6);
+  background-color: rgb(6, 6, 6);
   border-radius: 10px;
   padding: 10px;
 }
 
 .departures table {
-  background-color: rgb(46,46,46);
+  background-color: rgb(46, 46, 46);
   text-align: left;
   min-height: 305px;
 }
@@ -35,10 +42,79 @@ header {
 }
 
 .departures table div {
-  border: solid 4px rgb(26,26,26);
-  background-color: rgb(0,0,0);
+  border: solid 4px rgb(26, 26, 26);
+  background-color: rgb(0, 0, 0);
   float: left;
   height: 40px;
+}
+
+/* Add new class in CSS */
+
+/* .digital-clock {
+
+  display: flex;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 35px;
+  position: absolute;
+  top: 290px;
+  padding-left: 920px;
+} */
+
+.analog-clock {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  border-radius: 40%;
+  border: 2px solid white;
+  position: absolute;
+  top: 275px;
+  left: 1370px;
+  /* transform: rotate(270deg); */
+}
+
+#seconds-hand {
+  position: absolute;
+  height: 30px;
+  width: 2px;
+  background-color: bisque;
+  right: 25px;
+  opacity: 50%;
+  transform-origin: 0 100%;
+  left: 22px;
+  bottom: 22px;
+  transform: rotate(0deg);
+}
+
+#minutes-hand {
+  position: absolute;
+  height: 25px;
+  width: 3px;
+  background-color: red;
+  right: 25px;
+  transform-origin: 0 100%;
+  left: 22px;
+  bottom: 22px;
+}
+
+#hours-hand {
+  position: absolute;
+  height: 20px;
+  width: 4px;
+  background-color: blue;
+  right: 25px;
+  transform-origin: 0 100%;
+  left: 22px;
+  bottom: 22px;
+}
+
+#centre {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: aqua;
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
 }
 
 #time {
@@ -62,7 +138,7 @@ header {
 }
 
 .flip {
-    animation: 0.5s linear flip;
+  animation: 0.5s linear flip;
 }
 
 @keyframes flip {
