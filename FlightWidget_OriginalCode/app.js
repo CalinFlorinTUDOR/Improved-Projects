@@ -51,34 +51,61 @@ let hour = 15
 
 // Add digital clock code 
 
-const hours = document.getElementById('hours');
-const minutes = document.getElementById('minutes');
-const seconds = document.getElementById('seconds');
+// const hours = document.getElementById('hours');
+// const minutes = document.getElementById('minutes');
+// const seconds = document.getElementById('seconds');
 
-const digitalClock = setInterval(function digital() {
+// const digitalClock = setInterval(function digital() {
 
-  let dateToday = new Date();
-  let hr = dateToday.getHours();
-  let min = dateToday.getMinutes();
-  let sec = dateToday.getSeconds();
+//   let dateToday = new Date();
+//   let hr = dateToday.getHours();
+//   let min = dateToday.getMinutes();
+//   let sec = dateToday.getSeconds();
 
-  if(hr < 10) {
-    hr = '0' + hr;
-  }
+//   if(hr < 10) {
+//     hr = '0' + hr;
+//   }
 
-  if(min < 10) {
-    min = '0' + min;
-  }
+//   if(min < 10) {
+//     min = '0' + min;
+//   }
 
-  if(sec < 10) {
-    sec = '0' + sec;
-  }
+//   if(sec < 10) {
+//     sec = '0' + sec;
+//   }
   
 
-  hours.textContent = hr;
-  minutes.textContent = min;
-  seconds.textContent = sec;
-}, 1000);
+//   hours.textContent = hr;
+//   minutes.textContent = min;
+//   seconds.textContent = sec;
+// }, 1000);
+
+// Add analog clock code 
+
+const secondsHand = document.getElementById('seconds-hand')
+const minutesHand = document.getElementById('minutes-hand')
+const hoursHand = document.getElementById('hours-hand')
+
+function getTime() {
+
+  const now = new Date()
+  const seconds = now.getSeconds()
+  const minutes = now.getMinutes()
+  const hours = now.getHours()
+  const timeInterval = 6
+
+  console.log(now)
+  console.log(seconds * timeInterval)
+  console.log(minutes * timeInterval + seconds / 10)
+  console.log(hours * 30 + minutes / 2)
+
+
+  secondsHand.style.transform = 'rotate (' + (seconds * timeInterval) + 'deg)'
+  minutesHand.style.transform = 'rotate (' + (minutes * timeInterval + seconds / 10) + 'deg)'
+  hoursHand.style.transform = 'rotate (' + (hours * 30 + minutes / 2) + 'deg)'
+}
+
+setInterval(getTime, 100)
 
 function populateTable() {
   for (const flight of flights) {
